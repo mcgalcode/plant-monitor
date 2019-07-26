@@ -8,7 +8,7 @@
 
 100.times do |t|
   Point.create(values: {
-    x: rand(100),
-    y: rand(100),
+    x: rand(2),
+    y: rand(2),
   })
 end
