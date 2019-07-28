@@ -1,8 +1,13 @@
 class Api::PointsController < ApplicationController
 
   def index
+    if !params[:minutes_ago].nil?
+      points = Point.from_minutes_ago(params[:minutes_ago].to_i)
+    else
+      points = Point.all
+    end
     render json: {
-      points: Point.all
+      points: points
     }, status: 200
   end
 
